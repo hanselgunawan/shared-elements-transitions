@@ -2,8 +2,10 @@ package com.hanseltritama.sharedelementstransitions
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Explode
 import android.transition.Fade
 import android.view.View
+import android.view.Window
 import androidx.appcompat.widget.ActionBarContainer
 
 class DetailsActivity : AppCompatActivity() {
@@ -24,7 +26,7 @@ class DetailsActivity : AppCompatActivity() {
         }
         fade.excludeTarget(android.R.id.statusBarBackground, true)
         fade.excludeTarget(android.R.id.navigationBarBackground, true)
-        window.enterTransition = fade
-        window.exitTransition = fade
+        window.enterTransition = Explode()
+        window.exitTransition = Explode()
     }
 }
