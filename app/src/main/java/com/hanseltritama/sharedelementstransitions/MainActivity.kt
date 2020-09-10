@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.transition.Explode
 import android.transition.Fade
 import android.view.View
-import android.view.Window
 import androidx.appcompat.widget.ActionBarContainer
 import androidx.core.app.ActivityOptionsCompat
-import androidx.core.view.ViewCompat
+import androidx.core.util.Pair
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -36,14 +35,14 @@ class MainActivity : AppCompatActivity() {
 
         button_main.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
-            val optionsCompat = ViewCompat.getTransitionName(image_main)?.let { transitionName ->
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this,
-                    image_main,
-                    transitionName
-                )
-            }
-            startActivity(intent, optionsCompat?.toBundle())
+            val p1 = Pair.create<View, String>(text_main, "my_transition_text")
+            val p2 = Pair.create<View, String>(image_main, "my_transition_image")
+            val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                this,
+                p1,
+                p2
+            )
+            startActivity(intent, optionsCompat.toBundle())
         }
     }
 }

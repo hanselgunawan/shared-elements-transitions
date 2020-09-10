@@ -12,12 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:src="@drawable/ic_android_black"
-        android:transitionName="my_transition"
+        android:transitionName="my_transition_image"
         android:layout_marginBottom="20dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:transitionName="my_transition_text"
         android:text="@string/lorem_ipsum_string"/>
 
 </LinearLayout>

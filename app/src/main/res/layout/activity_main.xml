@@ -13,7 +13,19 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="102dp"
         android:src="@drawable/ic_android_black"
-        android:transitionName="my_transition" />
+        android:transitionName="my_transition_image" />
+
+    <TextView
+        android:id="@+id/text_main"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="102dp"
+        android:layout_toRightOf="@+id/image_main"
+        android:textSize="10sp"
+        android:transitionName="my_transition_text"
+        android:text="@string/lorem_ipsum_string"/>
 
     <Button
         android:id="@+id/button_main"
