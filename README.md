@@ -42,5 +42,26 @@ window.enterTransition = Explode()
 window.exitTransition = Explode()
 ```
 
-## App Demo
+## Multiple Shared Elements
+```
+import androidx.core.util.Pair
+
+val p1 = Pair.create<View, String>(<ELEMENT_ID>, "<TRANSITION_NAME>")
+...
+...
+val pN = Pair.create<View, String>(<ELEMENT_ID>, "<TRANSITION_NAME>")
+
+val optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+    this,
+    p1,
+    ...,
+    ...,
+    pN
+)
+```
+
+## App Demo (Single Shared Element)
 <img src="https://i.gyazo.com/2fd8d01adfbc1f098657b25b76e98be6.gif" width="350px" height="650px"/>
+
+## App Demo (Multiple Shared Elements)
+<img src="https://i.gyazo.com/858928770bb2850df62d34bb0549f7f1.gif" width="350px" height="650px"/>
