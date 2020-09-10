@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O_MR1) {
             fade.excludeTarget(decor.findViewById<ActionBarContainer>(resId), true)
         } else {
-            fade.excludeTarget(decor.findViewById(resId) as ActionBarContainer, true)
+            fade.excludeTarget(decor.findViewById(resId) as ActionBarContainer?, true)
         }
         fade.excludeTarget(android.R.id.statusBarBackground, true)
         fade.excludeTarget(android.R.id.navigationBarBackground, true)
