@@ -1,20 +1,16 @@
 package com.hanseltritama.sharedelementstransitions
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.transition.Fade
 import android.view.View
 import androidx.appcompat.widget.ActionBarContainer
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.view.ViewCompat
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_details)
 
         val fade = Fade()
         val decor: View = window.decorView
@@ -30,17 +26,5 @@ class MainActivity : AppCompatActivity() {
         fade.excludeTarget(android.R.id.navigationBarBackground, true)
         window.enterTransition = fade
         window.exitTransition = fade
-
-        button_main.setOnClickListener {
-            val intent = Intent(this, DetailsActivity::class.java)
-            val optionsCompat = ViewCompat.getTransitionName(image_main)?.let { transitionName ->
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    this,
-                    image_main,
-                    transitionName
-                )
-            }
-            startActivity(intent, optionsCompat?.toBundle())
-        }
     }
 }
